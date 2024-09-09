@@ -1,46 +1,46 @@
 import {
-    generateSigner,
-    keypairIdentity,
-    KeypairSigner,
-    percentAmount,
-    Signer,
-    sol,
-    some,
-    transactionBuilder,
-    publicKey as UMIPublicKey,
-    Transaction as UMITransaction,
+	generateSigner,
+	keypairIdentity,
+	KeypairSigner,
+	percentAmount,
+	Signer,
+	sol,
+	some,
+	transactionBuilder,
+	publicKey as UMIPublicKey,
+	Transaction as UMITransaction,
 } from "@metaplex-foundation/umi";
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
 import {
-    clusterApiUrl,
-    Connection,
-    Keypair,
-    TransactionMessage,
-    VersionedTransaction,
+	clusterApiUrl,
+	Connection,
+	Keypair,
+	TransactionMessage,
+	VersionedTransaction,
 } from "@solana/web3.js";
 
 import {
-    addConfigLines,
-    ConfigLine,
-    create as CreateTMdCM,
-    mintV2,
-    mplCandyMachine,
+	addConfigLines,
+	ConfigLine,
+	create as CreateTMdCM,
+	mintV2,
+	mplCandyMachine,
 } from "@metaplex-foundation/mpl-candy-machine";
 import {
-    createNft,
-    findTokenRecordPda,
-    TokenStandard,
+	createNft,
+	findTokenRecordPda,
+	TokenStandard,
 } from "@metaplex-foundation/mpl-token-metadata";
 import { setComputeUnitLimit } from "@metaplex-foundation/mpl-toolbox";
 import {
-    fromWeb3JsPublicKey,
-    toWeb3JsMessage,
-    toWeb3JsPublicKey,
-    toWeb3JsTransaction,
+	fromWeb3JsPublicKey,
+	toWeb3JsMessage,
+	toWeb3JsPublicKey,
+	toWeb3JsTransaction,
 } from "@metaplex-foundation/umi-web3js-adapters";
 import {
-    getAssociatedTokenAddress,
-    getAssociatedTokenAddressSync,
+	getAssociatedTokenAddress,
+	getAssociatedTokenAddressSync,
 } from "@solana/spl-token";
 import { signerKP, UINT_USER_KEYPAIR } from "./helpers";
 
@@ -195,9 +195,3 @@ async function mintFromCM(
 // )
 // 	.then()
 // 	.catch(console.error);
-
-mintArgs: {
-    memo: some({
-        minter: umi.identity.publicKey,
-    }),
-}
